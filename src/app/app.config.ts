@@ -29,7 +29,8 @@ export const appConfig: ApplicationConfig = {
     ),
     {
       provide: APP_BASE_HREF,
-      useValue: window.location.origin
+      useValue: window.location.pathname.includes('contributions') ? '/contributions' : '/'
+      // useValue: window.location.origin
     }
   ]
 };
