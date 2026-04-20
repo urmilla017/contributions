@@ -1,17 +1,19 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, importProvidersFrom, inject } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import { APP_BASE_HREF } from '@angular/common';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
 export class TranslateHttpLoaderV17 implements TranslateLoader {
-  constructor(private http: HttpClient) {}
+  private http: HttpClient = inject(HttpClient);
+  private baseHref: string = inject(APP_BASE_HREF);
 
   getTranslation(lang: string): Observable<any> {
-    return this.http.get(`/assets/i18n/${lang}.json`);
+    return this.http.get(`${this.baseHref}/assets/i18n/${lang}.json`);
   }
 }
 
+// Standalone configuration
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -21,9 +23,13 @@ export const appConfig: ApplicationConfig = {
         loader: {
           provide: TranslateLoader,
           useClass: TranslateHttpLoaderV17,
-          deps: [HttpClient]
+          deps: [HttpClient, APP_BASE_HREF]
         }
       })
-    )
+    ),
+    {
+      provide: APP_BASE_HREF,
+      useValue: window.location.origin
+    }
   ]
 };
