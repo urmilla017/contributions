@@ -1,0 +1,10 @@
+{
+  "HEATMAP": {
+    "TITLE": "Beiträge-Kalender - {{year}}",
+    "PREVIOUS": "◀ Zurück",
+    "NEXT": "Weiter ▶",
+    "TOOLTIP": "{{date}}: {{count}} Beiträge",
+    "DAYS": ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+    "MONTHS": ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
+  }
+}

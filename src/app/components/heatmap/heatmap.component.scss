@@ -1,0 +1,72 @@
+.heatmap-chart {
+  margin: 0 auto;
+}
+
+.heatmap-chart {
+  width: 70%;
+  height: calc(40vh);
+  min-height: 300px;
+  margin-top: 10px;
+}
+
+.year-nav {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.year-nav button {
+  min-width: 90px;
+  margin: 0 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-border);
+  border-radius: 4px;
+  color: var(--button-color);
+  transition: all 0.2s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.year-nav button:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.year-nav button:disabled {
+  background-color: var(--button-disabled-bg);
+  border: 1px solid var(--button-border);
+  color: var(--button-disabled-color);
+  cursor: not-allowed;
+}
+
+.year-label {
+  font-size: 1.2em;
+  margin: 0 10px;
+}
+
+.palette-selector {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.1s;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.swatch.selected {
+  border: 2px solid currentColor;
+}

@@ -1,0 +1,10 @@
+{
+  "HEATMAP": {
+    "TITLE": "Contributions Heatmap - {{year}}",
+    "PREVIOUS": "◀ Previous",
+    "NEXT": "Next ▶",
+    "TOOLTIP": "{{date}}: {{count}} contributions",
+    "DAYS": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "MONTHS": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  }
+}
