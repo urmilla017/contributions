@@ -1,0 +1,21 @@
+<div class="year-nav">
+    <button (click)="prevYear()" [disabled]="isFirstYear()">
+        {{ 'HEATMAP.PREVIOUS' | translate }}
+    </button>
+    <span class="year-label">{{ selectedYear() }}</span>
+    <button (click)="nextYear()" [disabled]="isLastYear()">
+        {{ 'HEATMAP.NEXT' | translate }}
+    </button>
+</div>
+
+<div class="palette-selector">
+    @for (key of paletteKeys; track key) {
+        <span class="swatch"
+            [style.background]="colorPalettes[key][colorPalettes[key].length -1]"
+            [class.selected]="selectedPalette() === key"
+            (click)="changePalette(key)">
+        </span>
+    }
+</div>
+
+<div #chartContainer class="heatmap-chart"></div>
